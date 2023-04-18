@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercise1.MainPage">
+
+    <StackLayout>
+        <Label 
+            Text="Einstein Famous Quotes"
+            FontSize="Large"
+            HorizontalOptions="CenterAndExpand"
+            FontAttributes="Bold"
+            TextColor="Gray"
+            />
+        <Label
+            x:Name="Quotes"
+            Text="Quotes"
+            BindingContext="{Reference FontSizeSlider}"
+            FontSize="{Binding Value}"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            FontAttributes="Italic"
+            HorizontalTextAlignment="Center"
+            Margin="20"
+            />
+        <Button
+            Text="Next"
+            Margin="20"
+            Clicked="Button_Clicked"/>
+        <Slider
+            x:Name="FontSizeSlider"
+            MinimumTrackColor="CornflowerBlue"
+            Minimum="0"
+            MaximumTrackColor="Gray"
+            Maximum="30"
+            ThumbColor="Blue"
+            Margin="20"
+            />
+        <Label
+            x:Name="FontSizeLabel"
+            BindingContext="{x:Reference FontSizeSlider}"
+            Text="{Binding Value, StringFormat='Font Size :{0}'}"
+            HorizontalOptions="Center"
+            Margin="10"
+            />
+        <Slider
+            x:Name="FontColorSlider"
+            ValueChanged="FontColorSlider_ValueChanged"
+            MinimumTrackColor="CornflowerBlue"
+            Minimum="0"
+            MaximumTrackColor="Gray"
+            Maximum="8"
+            ThumbColor="Blue"
+            Margin="20"
+            />
+    </StackLayout>
+
+</ContentPage>
